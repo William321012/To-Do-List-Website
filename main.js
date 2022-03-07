@@ -1,18 +1,34 @@
-let addToDoButton = document.getElementById('addToDo');
-let toDoContainer = document.getElementById('toDoContainer');
-let inputField = document.getElementById('inputField');
+var list = document.querySelector('ul');
+list.addEventListener('click', function(selected) {
+  if (selected.target.tagName === 'LI') {
+    selected.target.classList.toggle('checked');
+  }
+}, false);
 
-addToDoButton.addEventListener('click', function(){
-    var paragraph = document.createElement('p');
-    paragraph.classList.add('paragraph-styling');
-    paragraph.innerText = inputField.value;
-    toDoContainer.appendChild(paragraph);
-    inputField.value = "";
-    paragraph.addEventListener('click', function(){
-        paragraph.style.textDecoration = "line-through";
-    })
-    paragraph.addEventListener('dblclick', function(){
-        toDoContainer.removeChild(paragraph);
-    })
-})
+function newElement() {
+  var item = document.createElement("li");
+  var inputValue = document.getElementById("inputField").value;
+  var text = document.createTextNode(inputValue);
+  item.appendChild(text);
 
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("toDoContainer").appendChild(item);
+  }
+  document.getElementById("inputField").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("Delete");
+  span.className = "close";
+  span.appendChild(txt);
+  item.appendChild(span);
+
+  var close = document.getElementsByClassName("close");
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}

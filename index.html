@@ -10,25 +10,26 @@
 <body>
   <div class="hero">
       <h1 class="text-center display-3">To Do List</h1>
-      <p class="lead text-center">Welcome to my todolist</p>
 
     <div class="container">
       <div class="row">
-        <div class="input-group">
-      <input type="text" class="form-control" id="inputField" placeholder="Enter Topic" value="">
-      <button id="addToDo" class="btn btn-primary" style="font-size: 19px; margin-left: 1px;">
-        Submit
-      </button>
-      </div>
+        <div class="input-group col-11 mx-auto" >
+          <input type="text" class="form-control" id="inputField" placeholder="Enter Note" value="">
+          <button onclick="newElement()" class="btn btn-primary" style="font-size: 19px; margin-left: 1px;">
+            Submit
+          </button>
+        </div>
       </div>
 
-    <div class="row">
-      <div class="col-11 mx-auto" id="separate">
-    <ul id="toDoContainer">
-    </ul>
+      <div class="row">
+        <div class="col-11 mx-auto" id="separate">
+          <ul id="toDoContainer">
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-  </div>
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
