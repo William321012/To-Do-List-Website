@@ -1,110 +1,34 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <title>To Do List</title>
-  <style type="text/css">
-    body {
-      background-image: url(note.jpg);
-      min-height: 100vh;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      color: white;
-      font-size: 1.5rem;
-      font-family: Monaco;
-    }
-    .hero {
-      margin-left: 10rem;
-      margin-right: 10rem;
-      background-color: rgba(1, 1, 1, 0.1);
-      min-height: 40vh;
-    }
-    h1 {
-      margin-top: 13rem;
-      margin-bottom: 0px;
-    }
-    .lead {
-      font-size: 2rem;
-    }
-    ul {
-      list-style: none;
-      margin-top: 2rem;
-      border-top: 2px solid white;
-      display: none;
-    }
-    li {
-      border-bottom: 1px solid white;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-
-    input[type=checkbox] {
-      border: 1px solid black;
-      margin-right: 7px;
-      height: 20px;
-      width: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
 </head>
-
 <body>
   <div class="hero">
-    <h1 class="text-center display-3">To Do List</h1>
-    <p class="lead text-center">Welcome to my todolist</p>
+      <h1 class="text-center display-3">To Do List</h1>
+      <p class="lead text-center">Welcome to my todolist</p>
 
     <div class="container">
       <div class="row">
-        <form class="col-10 mx-auto" id="form">
-          <div class="input-group">
-            <input class="form-control" id="input" placeholder="Enter Topic" value="">
-            <span>
-              <button type="submit" class="btn btn-primary" id="btn" style="font-size: 19px; margin-left: 1px;">
-                Submit
-              </button>
-            </span>
-          </div>
-        </form>
+        <div class="input-group">
+      <input type="text" class="form-control" id="inputField" placeholder="Enter Topic" value="">
+      <button id="addToDo" class="btn btn-primary" style="font-size: 19px; margin-left: 1px;">
+        Submit
+      </button>
+      </div>
       </div>
 
-      <div class="row">
-        <ul class="list col-8 mx-auto" id="list">
-          <!-- List Of Inputs -->
-        </ul>
-      </div>
-    </div>
+    <div class="row">
+      <div class="col-11 mx-auto" id="separate">
+    <ul id="toDoContainer">
+    </ul>
   </div>
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-  <script type="text/javascript">
-    window.onload = function() {
-      var form = document.getElementById("form");
-      var input = document.getElementById("input");
-      var btn = document.getElementById("btn");
-      var list = document.getElementById("list");
-      var id = 1;
-
-      btn.addEventListener("click", addItem);
-
-      function addItem() {
-        if(input.value === "") {
-          alert("Please enter a value.");
-        } else {
-          if(list.style.borderTop === "") {
-            list.style.borderTop = "2px solid white";
-          }
-          var text = input.value;
-          // var item = `<li id="li-$(id)">${text}
-          list.insertAdjacentHTML('beforehand', text);
-          id++;
-          form.reset();
-        }
-      }
-    }
-  </script>
+</div>
+  </div>
+    <script src="main.js"></script>
 </body>
 </html>
