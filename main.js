@@ -13,12 +13,24 @@ function newElement() {
   var item = document.createElement("li");
   var inputValue = document.getElementById("inputField").value;
   var text = document.createTextNode(inputValue);
-  item.appendChild(text);
+  var space = " | ";
 
-  // Checks empty and inserts item if not
+  // Checks empty and inserts item if not.
   if (inputValue === '') {
     alert("You must write something!");
   } else {
+    //Adds date to item
+    var date = document.getElementById('dueDate').value;
+    var dueDate = document.createTextNode(date);
+    item.appendChild(dueDate);
+
+    //Spaces out date from note
+    var space = " | ";
+    var spacer = document.createTextNode(space);
+    item.appendChild(spacer);
+
+    //Adds Note
+    item.appendChild(text);
     document.getElementById("toDoContainer").appendChild(item);
   }
   document.getElementById("inputField").value = "";

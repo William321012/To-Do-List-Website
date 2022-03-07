@@ -1,3 +1,4 @@
+/* General layout and centering */
 body {
   background-image: url(background.jpg);
   min-height: 100vh;
@@ -9,6 +10,7 @@ body {
   font-family: Monaco;
 }
 
+/* Organize title */
 h1 {
   margin-top: 13rem;
   margin-bottom: 0px;
@@ -20,6 +22,7 @@ ul {
   padding: 0;
 }
 
+/* Creates a cursor on note so users know it can be pressed and adjustments to note */
 ul li {
   cursor: pointer;
   position: relative;
@@ -35,7 +38,6 @@ ul li {
 
 /* Reveals checkmark when clicked */
 ul li.checked {
-  color: #fff;
   text-decoration: line-through;
 }
 
@@ -43,39 +45,44 @@ ul li.checked {
 ul li.checked::before {
   content: '';
   position: absolute;
-  border-color: #fff;
+  border-color: yellow;
   border-style: solid;
   border-width: 0 2px 2px 0;
-  top: 10px;
+  top: 8px;
   left: -15px;
   transform: rotate(45deg);
   height: 15px;
   width: 7px;
 }
 
-input[type=checkbox] {
-  border: 1px solid black;
-  margin-right: 7px;
-  height: 20px;
-  width: 20px;
-}
-
+/* Creates a gray layer on the screen to show that focus attention on center */
 .hero {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
   background-color: rgba(1, 1, 1, 0.1);
   min-height: 40vh;
 }
 
+/* Delete button design */
 .close {
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
   color: white;
+  background: Crimson;
+  border-radius: 12px;
+  border-style: inset;
+  border-color: gray;
 }
 
+/* Create a line separating input from list */
 #separate {
   margin-top: 1rem;
   border-top: 2px solid white;
+}
+
+/* Make date gray to matc the website */
+#dueDate {
+  color: gray;
 }
