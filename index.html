@@ -13,11 +13,19 @@
 
     <div class="container">
       <div class="row">
-        <div class="input-group col-11 mx-auto" >
+        <div class="input-group col-11 mx-auto">
           <input type="text" class="form-control" id="inputField" placeholder="Enter Note" value="">
-          <button onclick="newElement()" class="btn btn-primary" style="font-size: 19px; margin-left: 1px;">
+          <select class="col-3 mx-auto" id="itemColor" style="font-size: 19px; color: gray;">
+            <option value="red">Red(Urgent)</option>
+            <option value="blue">Blue(Upcoming)</option>
+            <option value="white">White(Normal)</option>
+          </select>
+          <button onclick="newElement()" class="btn btn-primary" style="font-size: 19px;">
             Submit
           </button>
+          <audio>
+            <source src="mouse-click">
+          </audio>
         </div>
       </div>
 

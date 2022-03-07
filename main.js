@@ -1,7 +1,11 @@
+//Checks to see if item as been clicked and toggles between checked and unchecked
 var list = document.querySelector('ul');
 list.addEventListener('click', function(selected) {
   if (selected.target.tagName === 'LI') {
     selected.target.classList.toggle('checked');
+    //Plays audio when item is clicked
+    var audio = new Audio('click.mp3');
+    audio.play();
   }
 }, false);
 
@@ -11,6 +15,7 @@ function newElement() {
   var text = document.createTextNode(inputValue);
   item.appendChild(text);
 
+  // Checks empty and inserts item if not
   if (inputValue === '') {
     alert("You must write something!");
   } else {
@@ -18,12 +23,19 @@ function newElement() {
   }
   document.getElementById("inputField").value = "";
 
+  // Adds Color to indicate priority
+  var color = document.getElementById('itemColor');
+  var txtColor = color.options[color.selectedIndex].value;
+  item.style.color = txtColor;
+
+  // Adds the delete button
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("Delete");
   span.className = "close";
   span.appendChild(txt);
   item.appendChild(span);
 
+  //Hides list items that've been deleted
   var close = document.getElementsByClassName("close");
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
